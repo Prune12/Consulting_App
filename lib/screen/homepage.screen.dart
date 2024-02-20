@@ -3,6 +3,7 @@
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/custom_Appbar.widget.dart';
 import 'package:consulting_app/widgets/drawer_menu.widget.dart';
+import 'package:consulting_app/widgets/imageAndtextAndmoneyContainer.widget.dart';
 import 'package:consulting_app/widgets/searchbar.widget.dart';
 import 'package:consulting_app/widgets/textAndimageContainer.widget.dart';
 import 'package:consulting_app/widgets/zoomOnContainer.dart';
@@ -11,22 +12,116 @@ import 'package:flutter/material.dart';
 import '../widgets/footer.widget.dart';
 
 class homepage extends StatefulWidget {
-  const homepage({super.key});
+  homepage({super.key});
 
   @override
   State<homepage> createState() => _homepageState();
 }
 
 class _homepageState extends State<homepage> {
+  final PageController _controller = PageController();
+  final List<ServiceContainerWidget> mesWidgets = [
+    ServiceContainerWidget(
+        imagecontainer: const AssetImage(
+            'assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'),
+        principaltext: TextButton(
+            onPressed: () {},
+            child: const Text(
+                "Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        trueicon: const Icon(
+          Icons.task_alt_rounded,
+          color: Colors.green,
+        ),
+        localisationtext: TextButton(
+            onPressed: () {},
+            child: const Text("Yaoundé",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        pricetext: const Text("2,500,000 FCFA")),
+
+    ServiceContainerWidget(
+        imagecontainer: const AssetImage(
+            'assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'),
+        principaltext: TextButton(
+            onPressed: () {},
+            child: const Text(
+                "Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        trueicon: const Icon(
+          Icons.task_alt_rounded,
+          color: Colors.green,
+        ),
+        localisationtext: TextButton(
+            onPressed: () {},
+            child: const Text("Yaoundé",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        pricetext: const Text("2,500,000 FCFA")),
+    ServiceContainerWidget(
+        imagecontainer: const AssetImage(
+            'assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'),
+        principaltext: TextButton(
+            onPressed: () {},
+            child: const Text(
+                "Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        trueicon: const Icon(
+          Icons.task_alt_rounded,
+          color: Colors.green,
+        ),
+        localisationtext: TextButton(
+            onPressed: () {},
+            child: const Text("Yaoundé",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        pricetext: const Text("2,500,000 FCFA")),
+    ServiceContainerWidget(
+        imagecontainer: const AssetImage(
+            'assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'),
+        principaltext: TextButton(
+            onPressed: () {},
+            child: const Text(
+                "Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        trueicon: const Icon(
+          Icons.task_alt_rounded,
+          color: Colors.green,
+        ),
+        localisationtext: TextButton(
+            onPressed: () {},
+            child: const Text("Yaoundé",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        pricetext: const Text("2,500,000 FCFA")),
+    ServiceContainerWidget(
+        imagecontainer: const AssetImage(
+            'assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'),
+        principaltext: TextButton(
+            onPressed: () {},
+            child: const Text(
+                "Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        trueicon: const Icon(
+          Icons.task_alt_rounded,
+          color: Colors.green,
+        ),
+        localisationtext: TextButton(
+            onPressed: () {},
+            child: const Text("Yaoundé",
+                style: TextStyle(color: Colors.black, fontFamily: 'popping'))),
+        pricetext: const Text("2,500,000 FCFA")),
+
+    // Ajoutez autant de widgets que vous le souhaitez...
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // Passez le widget appbar que vous voulez utiliser comme paramètre appBar
       appBar: CustomAppBar(
-        //title: '3M CONSULTING',
-        color: APPBAR_COLOR,
-        logo: 'assets/images/3M Consulting.png',
-      ),
+          //title: '3M CONSULTING',
+          color: APPBAR_COLOR,
+          logo: Image.asset(
+            'assets/images/3m.png',
+            width: 200,
+            height: 200,
+          )),
       endDrawer: const Drawermenu(),
 
       // Passez le widget de contenu principal que vous voulez afficher comme paramètre body
@@ -66,13 +161,13 @@ class _homepageState extends State<homepage> {
                             fontFamily: 'popping'),
                       ),
                     ),
-                     Center(
+                    Center(
                       child: Searchbar(
                         onPressed: () async {
-              // Votre code asynchrone ici...
-              // Par exemple, vous pouvez simuler une opération de chargement avec un délai :
-              await Future.delayed(Duration(seconds: 10));
-            },
+                          // Votre code asynchrone ici...
+                          // Par exemple, vous pouvez simuler une opération de chargement avec un délai :
+                          await Future.delayed(Duration(seconds: 10));
+                        },
                       ),
                     ),
                     const SizedBox(height: 30.0),
@@ -230,6 +325,7 @@ class _homepageState extends State<homepage> {
                         style: TextStyle(color: Colors.grey, fontSize: 15.0),
                       ),
                     ),
+                    const SizedBox(height: 15.0),
                     LayoutBuilder(
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
@@ -239,89 +335,106 @@ class _homepageState extends State<homepage> {
 
                         // Créez une liste de vos widgets TextAndContainerWidget avec la largeur calculée.
                         List<ZoomOnHover> mesWidgets = [
-                          ZoomOnHover(child: 
-                          InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image: AssetImage('assets/images/personnal.png'),
-                              text1: Text('Communication '),
-                              text2: Text('Digital'),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image:
+                                    AssetImage('assets/images/personnal.png'),
+                                text1: Text('Communication '),
+                                text2: Text('Digital'),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 300,
-                              width: width,
-                              image: AssetImage('assets/images/ballon.png'),
-                              text1: Text('Special Can Total'),
-                              text2: Text('2023'),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 300,
+                                width: width,
+                                image: AssetImage('assets/images/ballon.png'),
+                                text1: Text('Special Can Total'),
+                                text2: Text('2023'),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image:
-                                  AssetImage('assets/images/ballonfeuille.png'),
-                              text1: Text('Agriculture/Agro'),
-                              text2: Text('nomie'),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image: AssetImage(
+                                    'assets/images/ballonfeuille.png'),
+                                text1: Text('Agriculture/Agro'),
+                                text2: Text('nomie'),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image: AssetImage('assets/images/etoile.png'),
-                              text1: Text('Evenementiels'),
-                              text2: Text(' '),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image: AssetImage('assets/images/etoile.png'),
+                                text1: Text('Evenementiels'),
+                                text2: Text(' '),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image: AssetImage('assets/images/veilleuse.png'),
-                              text1: Text('BTP (Bâtiment et '),
-                              text2: Text('travaux public)'),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image:
+                                    AssetImage('assets/images/veilleuse.png'),
+                                text1: Text('BTP (Bâtiment et '),
+                                text2: Text('travaux public)'),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image: AssetImage('assets/images/cloche.png'),
-                              text1: Text('Marketing digital'),
-                              text2: Text(' '),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image: AssetImage('assets/images/cloche.png'),
+                                text1: Text('Marketing digital'),
+                                text2: Text(' '),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image: AssetImage('assets/images/money.png'),
-                              text1: Text('Finances'),
-                              text2: Text(' '),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image: AssetImage('assets/images/money.png'),
+                                text1: Text('Finances'),
+                                text2: Text(' '),
+                              ),
                             ),
-                          ),),
-                          ZoomOnHover(child: InkWell(
-                            onTap: () {},
-                            child: TextAndContainerWidget(
-                              height: 200,
-                              width: width,
-                              image:
-                                  AssetImage('assets/images/climatiseur.png'),
-                              text1: Text('Froid et '),
-                              text2: Text('climatisation'),
+                          ),
+                          ZoomOnHover(
+                            child: InkWell(
+                              onTap: () {},
+                              child: TextAndContainerWidget(
+                                height: 200,
+                                width: width,
+                                image:
+                                    AssetImage('assets/images/climatiseur.png'),
+                                text1: Text('Froid et '),
+                                text2: Text('climatisation'),
+                              ),
                             ),
-                          ),),
+                          ),
                         ];
 
                         // Utilisez le widget Wrap pour afficher vos widgets.
@@ -330,6 +443,57 @@ class _homepageState extends State<homepage> {
                         );
                       },
                     ),
+                    const Center(
+                        child: Text(
+                      "Services proposés",
+                      style: TextStyle(color: BUTTON_COLOR, fontSize: 30.0),
+                    )),
+                    const SizedBox(height: 10.0),
+                    const Center(
+                      child: Text(
+                        "Quelques services de haute qualité sélectionnés par notre personnel.",
+                        style: TextStyle(color: Colors.grey, fontSize: 15.0),
+                      ),
+                    ),
+                    const SizedBox(height: 15.0),
+                     ServiceContainerWidget(imagecontainer: const AssetImage('assets/images/Vivez-une-CAN-DE-reve4-400x300.jpg'), principaltext: TextButton(onPressed: (){}, child: const Text("Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300 Vivez-une-CAN-DE-reve-400x300",style:TextStyle(color:Colors.black,fontFamily: 'popping'))), trueicon: const Icon(Icons.task_alt_rounded,color: Colors.green,),localisationtext: TextButton(onPressed: (){}, child: const Text("Yaoundé",style:TextStyle(color:Colors.black,fontFamily: 'popping'))), pricetext: const Text("2,500,000 FCFA")),
+                    // Column(
+                    //   children: <Widget>[
+                    //     Expanded(
+                    //       child: PageView.builder(
+                    //         controller: _controller,
+                    //         scrollDirection: Axis.horizontal,
+                    //         itemCount: mesWidgets.length,
+                    //         itemBuilder: (context, index) {
+                    //           return mesWidgets[index];
+                    //         },
+                    //       ),
+                    //     ),
+                    //     Row(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: <Widget>[
+                    //         IconButton(
+                    //           icon: Icon(Icons.arrow_back),
+                    //           onPressed: () {
+                    //             _controller.previousPage(
+                    //               duration: Duration(seconds: 1),
+                    //               curve: Curves.ease,
+                    //             );
+                    //           },
+                    //         ),
+                    //         IconButton(
+                    //           icon: Icon(Icons.arrow_forward),
+                    //           onPressed: () {
+                    //             _controller.nextPage(
+                    //               duration: Duration(seconds: 1),
+                    //               curve: Curves.ease,
+                    //             );
+                    //           },
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ],
+                    // )
                   ],
                 ),
               ],

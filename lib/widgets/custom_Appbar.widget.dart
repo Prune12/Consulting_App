@@ -7,7 +7,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   // Définissez les paramètres de votre widget AppBar
   //String title="";
   final Color color;
-  final String logo;
+  final Image logo;
 
   // Utilisez le constructeur pour initialiser les paramètres
   CustomAppBar({Key? key, required this.color, required this.logo})
@@ -34,17 +34,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       backgroundColor: widget.color, // Utilisez widget pour accéder au paramètre color
       iconTheme: const IconThemeData(color: Colors.black,),
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 16.0), // Ajoutez une marge à gauche
-        child: Container(
-          width: 120.0, // Ajustez la largeur comme vous le souhaitez
-          height: 120.0, // Ajustez la hauteur comme vous le souhaitez
-          child: Image(
-            image: AssetImage(widget.logo), // Utilisez widget pour accéder au paramètre logo
-            fit: BoxFit.scaleDown, // Utilisez BoxFit.scaleDown pour que l'image s'adapte au Container tout en conservant son rapport d'aspect
-          ),
-        ),
-      ),
+      leading:widget.logo,
     );
   }
 }

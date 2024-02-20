@@ -117,10 +117,9 @@ class _SearchbarState extends State<Searchbar> {
           ),
         ),
       ),
-      const SizedBox(width: 8.0, height: 8.0),
       IconButton(
         onPressed: _search,
-        icon: const Icon(Icons.send_sharp, color: Colors.grey),
+        icon: const Icon(Icons.near_me_sharp, color: Colors.grey),
       ),
       const SizedBox(width: 20.0, height: 8.0),
       DropdownButtonHideUnderline(

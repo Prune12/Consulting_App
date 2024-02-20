@@ -1,5 +1,6 @@
 import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/screen/homepage.screen.dart';
+import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
 
@@ -30,11 +31,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return   MaterialApp(
       title: '3M.digital',
+      theme: themeData,
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.home:(context) => homepage(),
       },
-      home: const homepage(),
+      home:  homepage(),
     );
   }
 }
