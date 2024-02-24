@@ -7,6 +7,7 @@ import 'package:consulting_app/widgets/consultingContainer.widget.dart';
 import 'package:consulting_app/widgets/custom_Appbar.widget.dart';
 import 'package:consulting_app/widgets/drawer_menu.widget.dart';
 import 'package:consulting_app/widgets/imageAndtextAndmoneyContainer.widget.dart';
+import 'package:consulting_app/widgets/offre.widget.dart';
 import 'package:consulting_app/widgets/searchbar.widget.dart';
 import 'package:consulting_app/widgets/textAndimageContainer.widget.dart';
 import 'package:consulting_app/widgets/zoomOnContainer.dart';
@@ -14,14 +15,14 @@ import 'package:flutter/material.dart';
 
 import '../widgets/footer.widget.dart';
 
-class homepage extends StatefulWidget {
-  homepage({super.key});
+class Newhomepage extends StatefulWidget {
+  Newhomepage({super.key});
 
   @override
-  State<homepage> createState() => _homepageState();
+  State<Newhomepage> createState() => _NewhomepageState();
 }
 
-class _homepageState extends State<homepage> {
+class _NewhomepageState extends State<Newhomepage> {
   final PageController _controller = PageController();
   final PageController _commentcontroller = PageController();
   final PageController _consultingcontroller = PageController();
@@ -182,8 +183,8 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Passez le widget appbar que vous voulez utiliser comme paramètre appBar
-      appBar:  MyAppBar(),
-      endDrawer: const Drawermenu(),
+      appBar: const MyAppBar(),
+      //endDrawer: const Drawermenu(),
 
       // Passez le widget de contenu principal que vous voulez afficher comme paramètre body
       body: SingleChildScrollView(
@@ -223,7 +224,7 @@ class _homepageState extends State<homepage> {
                       ),
                     ),
                     Center(
-                      child: Searchbar(
+                      child: Searchbar2(
                         onPressed: () async {
                           // Votre code asynchrone ici...
                           // Par exemple, vous pouvez simuler une opération de chargement avec un délai :
@@ -234,9 +235,10 @@ class _homepageState extends State<homepage> {
                     const SizedBox(height: 30.0),
                     Wrap(
                         alignment: WrapAlignment.center,
+                        spacing:8,
                         direction: Axis.horizontal,
                         children: [
-                          const SizedBox(width: 100),
+                          //const SizedBox(width: 100),
                           const Text("Populaire :",
                               style: TextStyle(
                                   fontSize: 12.0,
@@ -248,64 +250,74 @@ class _homepageState extends State<homepage> {
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: BUTTON_COLOR,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    bottomRight: Radius.circular(8.0)),
                               ),
                             ),
                             child: const Text(
                               'BUSINESS',
                             ),
                           ),
-                          const SizedBox(width: 8.0),
+                          //const SizedBox(width: 8.0),
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: BUTTON_COLOR,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    bottomRight: Radius.circular(8.0)),
                               ),
                             ),
                             child: const Text(
                               'ANIMATION',
                             ),
                           ),
-                          const SizedBox(width: 8.0),
+                          //const SizedBox(width: 8.0),
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: BUTTON_COLOR,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    bottomRight: Radius.circular(8.0)),
                               ),
                             ),
                             child: const Text(
                               'FLYER',
                             ),
                           ),
-                          const SizedBox(width: 8.0),
+                          //const SizedBox(width: 8.0),
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: BUTTON_COLOR,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    bottomRight: Radius.circular(8.0)),
                               ),
                             ),
                             child: const Text(
                               'COMMERCIAL',
                             ),
                           ),
-                          const SizedBox(width: 8.0),
+                          //const SizedBox(width: 8.0),
                           ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               foregroundColor: Colors.white,
                               backgroundColor: BUTTON_COLOR,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(8.0),
+                                    bottomRight: Radius.circular(8.0)),
                               ),
                             ),
                             child: const Text(
@@ -313,201 +325,139 @@ class _homepageState extends State<homepage> {
                             ),
                           ),
                         ]),
-                    const SizedBox(height: 200.0),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: 324,
-                      color: Colors.white,
-                      child: SingleChildScrollView(
-                        child: Wrap(
-                          alignment: WrapAlignment.spaceBetween,
-                          direction: Axis.horizontal,
-                          //spacing: 30.0,
-                          children: [
-                            TextAndContainerWidget(
-                                height: 240.0,
-                                width: 300,
-                                image:
-                                    const AssetImage('assets/images/rosee.png'),
-                                text1: const Text(
-                                  "Trouver un consultant",
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 24.0),
-                                ),
-                                text2: const Text(
-                                  "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 16.0),
-                                )),
-                            TextAndContainerWidget(
-                              height: 240.0,
-                              width: 300,
-                              image:
-                                  const AssetImage('assets/images/imag22.png'),
-                              text1: const Text(
-                                "Trouver un consultant",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                            ),
-                            TextAndContainerWidget(
-                                height: 240.0,
-                                width: 300,
-                                image:
-                                    const AssetImage('assets/images/img11.png'),
-                                text1: const Text(
-                                  "Trouver un consultant",
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 24.0),
-                                ),
-                                text2: const Text(
-                                  "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
-                                  style: TextStyle(
-                                      color: Colors.black, fontSize: 16.0),
-                                )),
-                          ],
+                    const SizedBox(height: 400.0),
+                    Center(
+                        child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.white,
+                        backgroundColor: Colors.yellow,
+                        fixedSize: const Size(500, 80),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
                         ),
                       ),
-                    ),
+                      child: const Text("voir toutes les publications d'offres",
+                          style: TextStyle(color: Colors.black)),
+                    )),
+                    const SizedBox(height: 70.0),
                     const Center(
                         child: Text(
-                      "Meilleurs Travail à faire Disponible",
+                      "Nos catégories d'offres les plus populaires",
                       style: TextStyle(color: BUTTON_COLOR, fontSize: 30.0),
                     )),
-                    const SizedBox(height: 10.0),
-                    const Center(
-                      child: Text(
-                        "Découvrez les catégories de services les plus populaires.",
-                        style: TextStyle(color: Colors.grey, fontSize: 15.0),
-                      ),
-                    ),
                     const SizedBox(height: 15.0),
                     LayoutBuilder(
                       builder:
                           (BuildContext context, BoxConstraints constraints) {
                         // Calculez la largeur de chaque widget TextAndContainerWidget en divisant la largeur totale par le nombre de widgets par ligne
                         double width = constraints.maxWidth /
-                            4; // Changez ce nombre pour contrôler combien de widgets par ligne
+                            3; // Changez ce nombre pour contrôler combien de widgets par ligne
 
                         // Créez une liste de vos widgets TextAndContainerWidget avec la largeur calculée.
                         List<ZoomOnHover> mesWidgets = [
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/personnal.png'),
-                                text1: const Text('Communication '),
-                                text2: const Text('Digital'),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 200,
+                              height: 60,
+                              image: 'assets/images/personnal.png',
+                              text1: const Text('Communication '),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 300,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/ballon.png'),
-                                text1: const Text('Special Can Total'),
-                                text2: const Text('2023'),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 250,
+                              height: 60,
+                              image: 'assets/images/ballon.png',
+                              text1: const Text('Special Can Total 2023'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/ballonfeuille.png'),
-                                text1: const Text('Agriculture/Agro'),
-                                text2: const Text('nomie'),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 250,
+                              height: 60,
+                              image: 'assets/images/ballonfeuille.png',
+                              text1: const Text('Agriculture/Agronomie'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/etoile.png'),
-                                text1: const Text('Evenementiels'),
-                                text2: const Text(' '),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 200,
+                              height: 60,
+                              image: 'assets/images/etoile.png',
+                              text1: const Text('Evenementiels'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/veilleuse.png'),
-                                text1: const Text('BTP (Bâtiment et '),
-                                text2: const Text('travaux public)'),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 280,
+                              height: 60,
+                              image: 'assets/images/veilleuse.png',
+                              text1: const Text(
+                                  'BTP (Bâtiment et travaux public)'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/cloche.png'),
-                                text1: const Text('Marketing digital'),
-                                text2: const Text(' '),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 230,
+                              height: 60,
+                              image: 'assets/images/cloche.png',
+                              text1: const Text('Marketing digital'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image:
-                                    const AssetImage('assets/images/money.png'),
-                                text1: const Text('Finances'),
-                                text2: const Text(' '),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 200,
+                              height: 60,
+                              image: 'assets/images/money.png',
+                              text1: const Text('Finances'),
                             ),
                           ),
                           ZoomOnHover(
-                            child: InkWell(
-                              onTap: () {},
-                              child: TextAndContainerWidget(
-                                height: 200,
-                                width: width,
-                                image: const AssetImage(
-                                    'assets/images/climatiseur.png'),
-                                text1: const Text('Froid et '),
-                                text2: const Text('climatisation'),
-                              ),
+                            child: TextAndContainerButton(
+                              width: 250,
+                              height: 60,
+                              image: 'assets/images/climatiseur.png',
+                              text1: const Text('Froid et climatisation'),
                             ),
                           ),
                         ];
 
                         // Utilisez le widget Wrap pour afficher vos widgets.
                         return Wrap(
+                          //direction: Axis.vertical,
+                          spacing: 40,
+                          runSpacing: 40,
                           children: mesWidgets,
                         );
                       },
                     ),
+                    const SizedBox(height: 70.0),
+                    const Center(
+                        child: Text(
+                      "Offres récemment présentées",
+                      style: TextStyle(color: BUTTON_COLOR, fontSize: 30.0),
+                    )),
+                    const Center(
+                      child: Column(
+                        children: [
+                          OffresWidget(
+                              firstext: "Doigt de fées",
+                              pricetext: "150.000 FCFA",
+                              datetext: "12 septembre 2020"),
+                          SizedBox(height: 10.0),
+                          OffresWidget(
+                              firstext: "Doigt de fées",
+                              pricetext: "150.000 FCFA",
+                              datetext: "12 septembre 2020"),
+                          OffresWidget(
+                              firstext: "Doigt de fées",
+                              pricetext: "150.000 FCFA",
+                              datetext: "12 septembre 2020"),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 70.0),
                     const Center(
                         child: Text(
                       "Services proposés",
@@ -670,6 +620,27 @@ class _homepageState extends State<homepage> {
                             ),
                           ],
                         ),
+                        const SizedBox(height: 5.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: APPBAR_COLOR,
+                                backgroundColor: APPBAR_COLOR,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                              child: const Text(
+                                'Consulter les services',
+                                style: TextStyle(
+                                    color: Colors.black, fontFamily: 'popping'),
+                              ),
+                            ),
+                          ],
+                        ),
                         const SizedBox(height: 15.0),
                         Container(
                           width: MediaQuery.of(context).size.width,
@@ -762,204 +733,7 @@ class _homepageState extends State<homepage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 50.0),
-                    const Center(
-                        child: Text(
-                      "Bien démarrer",
-                      style: TextStyle(color: BUTTON_COLOR, fontSize: 30.0),
-                    )),
                     const SizedBox(height: 15.0),
-                    const Center(
-                      child: Text(
-                        "Recherchez des services ou inscrivez vous en tant qu’indépendant.",
-                        style: TextStyle(color: Colors.grey, fontSize: 15.0),
-                      ),
-                    ),
-                    const SizedBox(height: 10.0),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: const EdgeInsets.only(top: 50.0),
-                      height: 500,
-                      color: Colors.white,
-                      child: SingleChildScrollView(
-                        child: Wrap(
-                          alignment: WrapAlignment.spaceAround,
-                          direction: Axis.horizontal,
-                          //spacing: 30.0,
-                          children: [
-                            TextAndContainerAndbuttonWidget(
-                              height: 400.0,
-                              width: 300,
-                              image:
-                                  const AssetImage('assets/images/client2.png'),
-                              text1: const Text(
-                                "J’ai besoin d’un service",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                              button: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: APPBAR_COLOR,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                                child: const Text(
-                                  'consulter les service',
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              ),
-                            ),
-                            TextAndContainerAndbuttonWidget(
-                              height: 400.0,
-                              width: 300,
-                              image:
-                                  const AssetImage('assets/images/rosee.png'),
-                              text1: const Text(
-                                "je suis un consultant",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                              button: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.all(20.0),
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: APPBAR_COLOR,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                                child: const Text('lister les service',
-                                    style: TextStyle(color: Colors.black)),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                   
-                    const SizedBox(height: 10.0),
-                    const Center(
-                        child: Text(
-                      "Nos différents plans tarifaires",
-                      style: TextStyle(color: BUTTON_COLOR, fontSize: 30.0),
-                    )),
-                    const SizedBox(height: 15.0),
-                    const Center(
-                      child: Text(
-                        "Nos meilleurs offres des plans meilleurs plans tarifaires.",
-                        style: TextStyle(color: Colors.grey, fontSize: 15.0),
-                      ),
-                    ),
-                     const SizedBox(height: 10.0),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      padding: const EdgeInsets.only(top: 50.0),
-                      height: 400,
-                      color: Colors.white,
-                      child: SingleChildScrollView(
-                        child: Wrap(
-                          alignment: WrapAlignment.spaceAround,
-                          direction: Axis.horizontal,
-                          //spacing: 30.0,
-                          children: [
-                            PlantarifaireContainerWidget(
-                              height: 300.0,
-                              width: 300,
-                              text1: const Text(
-                                "Free Plan \nGratuite",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Lorem ipsum dolor",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                              button: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: BUTTON_COLOR,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                                child: const Text(
-                                  'acheter un plan',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                            PlantarifaireContainerWidget(
-                              height: 300.0,
-                              width: 300,
-                              text1: const Text(
-                                "Premium plan \n150,000 CFA",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Lorem ipsum dolor",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                              button: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                                child: const Text('selectionner un plan',
-                                    style: TextStyle(color: Colors.white)),
-                              ),
-                            ),
-                             PlantarifaireContainerWidget(
-                              height: 300.0,
-                              width: 300,
-                              text1: const Text(
-                                "lifetime \ngratuite",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 24.0),
-                              ),
-                              text2: const Text(
-                                "Lorem ipsum dolor",
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 16.0),
-                              ),
-                              button: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  foregroundColor: Colors.white,
-                                  backgroundColor: Colors.black,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                                child: const Text('selectionner un plan',
-                                    style: TextStyle(color: Colors.white)),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ],
@@ -967,7 +741,7 @@ class _homepageState extends State<homepage> {
           ],
         ),
       ),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: const Footer1(),
     );
   }
 }

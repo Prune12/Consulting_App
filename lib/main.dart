@@ -1,5 +1,10 @@
 import 'package:consulting_app/routes/app.routes.dart';
+import 'package:consulting_app/screen/Actuality.screen.dart';
+import 'package:consulting_app/screen/consultant.screen.dart';
 import 'package:consulting_app/screen/homepage.screen.dart';
+import 'package:consulting_app/screen/newHome.screen.dart';
+import 'package:consulting_app/screen/offre.screen.dart';
+import 'package:consulting_app/screen/taf.screen.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
@@ -34,9 +39,13 @@ class _MyAppState extends State<MyApp> {
       theme: themeData,
       debugShowCheckedModeBanner: false,
       routes: {
-        AppRoutes.home:(context) => homepage(),
+        AppRoutes.newhome:(context) => Newhomepage(),
+        AppRoutes.taf:(context) => TAFPage(),
+        AppRoutes.offre:(context) => PublishOffer(),
+        AppRoutes.consult:(context) => ConsultantPage(),
+        AppRoutes.actuality:(context) => ActualityPage(),
       },
-      home:  homepage(),
+      home:  Newhomepage(),
     );
   }
 }
