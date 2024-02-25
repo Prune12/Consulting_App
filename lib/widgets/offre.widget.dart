@@ -15,7 +15,7 @@ class _OffresWidgetState extends State<OffresWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      child: ConstrainedBox(constraints: BoxConstraints(
+      child: ConstrainedBox(constraints: const BoxConstraints(
         maxWidth: 400
       ),
       
@@ -26,6 +26,7 @@ class _OffresWidgetState extends State<OffresWidget> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           
+          
           Column(
             children: [
               InkWell(
@@ -33,33 +34,33 @@ class _OffresWidgetState extends State<OffresWidget> {
                 child: Container(
                   height: 50,
                   width: 100,
-                  color: Color.fromRGBO(217, 217, 217, 1),
-                  padding: EdgeInsets.all(10.0),
-                  child: Text("IMG"),
+                  color: const Color.fromRGBO(217, 217, 217, 1),
+                  padding: const EdgeInsets.all(10.0),
+                  child: const Text("IMG"),
 
                 ),
               ),
               const SizedBox(height: 4,),
-              TextButton(onPressed: (){}, child: Text(widget.firstext,style: TextStyle(fontFamily: 'popping',color: Colors.black))),
+              TextButton(onPressed: (){}, child: Text(widget.firstext,style: const TextStyle(fontFamily: 'popping',color: Colors.black))),
               Row(
                 children: [
-                  TextButton(onPressed: (){}, child: Text("Commentaires",style: TextStyle(fontFamily: 'popping',color: Colors.black),)),
+                  TextButton(onPressed: (){}, child: const Text("Commentaires",style: TextStyle(fontFamily: 'popping',color: Colors.black),)),
                   const SizedBox(height: 4,),
-                  TextButton(onPressed: (){}, child: Text("Commenter",style: TextStyle(fontFamily: 'popping',color: Colors.black))),
+                  TextButton(onPressed: (){}, child: const Text("Commenter",style: TextStyle(fontFamily: 'popping',color: Colors.black))),
                 ],
               )
             ],
           ),
           Column(
             children: [
-              Text(widget.datetext,style: TextStyle(color: Color.fromRGBO(217, 217, 217, 1),),),
+              Text(widget.datetext,style: const TextStyle(color: Colors.grey,),),
               const SizedBox(height: 6,),
               Text(widget.pricetext),
               const SizedBox(height: 10,),
               ElevatedButton(onPressed: (){}
-              , child: Text("Postuler"),
+              , child: const Text("Postuler"),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey,
+                backgroundColor: const Color.fromRGBO(217, 217, 217, 1),
               ),
               
               

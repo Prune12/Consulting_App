@@ -12,10 +12,10 @@ class PublishOffer extends StatefulWidget {
 class _PublishOfferState extends State<PublishOffer> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: MyAppBar(),
       body: SingleChildScrollView(),
-      bottomNavigationBar: const Footer1(),
+      bottomNavigationBar: Footer1(),
     );
   }
 }
