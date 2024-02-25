@@ -40,10 +40,10 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoutes.newhome:(context) => Newhomepage(),
-        AppRoutes.taf:(context) => TAFPage(),
-        AppRoutes.offre:(context) => PublishOffer(),
-        AppRoutes.consult:(context) => ConsultantPage(),
-        AppRoutes.actuality:(context) => ActualityPage(),
+        AppRoutes.taf:(context) => const TAFPage(),
+        AppRoutes.offre:(context) => const PublishOffer(),
+        AppRoutes.consult:(context) => const ConsultantPage(),
+        AppRoutes.actuality:(context) => const ActualityPage(),
       },
       home:  Newhomepage(),
     );

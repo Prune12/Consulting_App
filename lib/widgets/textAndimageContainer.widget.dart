@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,7 @@ class TextAndContainerWidget extends StatefulWidget {
   final ImageProvider image;
   final Text text1;
   final Text text2;
-  TextAndContainerWidget(
+  const TextAndContainerWidget(
       {super.key,
       required this.height,
       required this.width,
