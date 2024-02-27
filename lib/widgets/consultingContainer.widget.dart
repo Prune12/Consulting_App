@@ -1,5 +1,6 @@
 //cette page permet de creer un widget reutilisable pour afficher la liste des consultants
 
+import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
 class ConsultingContainerWidget extends StatefulWidget {
@@ -131,8 +132,24 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
                         color: Colors.grey),
                   ),
                 ),
+                 const SizedBox(
+                  height: 15.0,
+                ),
+                Center(
+                    // padding: const EdgeInsets.only(top: 50.0, right: 120.0),
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: APPBAR_COLOR,
+                          fixedSize: const Size(220, 30),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )
+                        ),
+                        child: const Text("Devenir consultant",style:TextStyle(fontFamily: 'popping',fontSize: 14,color: Colors.black)),
+                        )),
                 const SizedBox(
-                  height: 12.0,
+                  height: 8.0,
                 ),
                 Container(
                     padding: const EdgeInsets.only(top: 50.0, right: 120.0),

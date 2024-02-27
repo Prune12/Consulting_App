@@ -99,14 +99,14 @@ class _Footer1State extends State<Footer1> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 240,
       color: Color.fromRGBO(0, 0, 0, 0.86),
       width: MediaQuery.sizeOf(context).width,
       // padding: const EdgeInsets.only(
       //   left: 16.0,
       //   right: 16.0,
       // ),
-      child: SingleChildScrollView(
+      
         child: Column(children: [
         
         Wrap(
@@ -236,6 +236,60 @@ class _Footer1State extends State<Footer1> {
             ),
 
 
+Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "LES PARTENAIRES",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "NGONDE Frank",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontFamily: 'popping'
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "NGONDE Frank",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontFamily: 'popping'
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "NGONDE Frank",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontFamily: 'popping'
+                    ),
+                  ),
+                ),
+                
+              ],
+            ),
+
              Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -315,8 +369,8 @@ class _Footer1State extends State<Footer1> {
         
         ],
         )
-      ),
-    );
+      )
+    ;
   }
 }
 

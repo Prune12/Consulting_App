@@ -196,3 +196,61 @@ class _ServiceContainerWidgetState extends State<ServiceContainerWidget> {
     );
   }
 }
+
+//voir plus d'offre
+class VoirplusService extends StatefulWidget {
+ 
+  
+
+  const VoirplusService(
+      {super.key,
+      });
+
+  @override
+  State<VoirplusService> createState() => _VoirplusServiceState();
+}
+
+class _VoirplusServiceState extends State<VoirplusService> {
+  
+
+ 
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 300),
+          child: Card(
+            elevation: 5.0,
+            borderOnForeground: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                  10.0), // Ajustez la valeur pour changer le rayon de l'arrondi
+              side: const BorderSide(color: Colors.black),
+            ),
+            child: Column(
+              children: <Widget>[
+                const SizedBox(
+                  height: 150.0,
+                ),
+               CircleAvatar(
+                backgroundColor: Colors.grey,
+                radius: 90,
+                child: IconButton(onPressed: (){},icon: Icon(Icons.add,color: Colors.black,),),
+               ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                
+                
+                Center(
+                  child: Text(
+                    "Voir plus",style: TextStyle(color: Colors.black,fontFamily: 'popping',fontSize: 20),
+                  ),
+                )
+                
+              ],
+            ),
+          )),
+    );
+  }}

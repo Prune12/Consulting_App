@@ -51,6 +51,7 @@ class _TextAndContainerWidgetState extends State<TextAndContainerWidget> {
                 height: 8.0,
               ),
               widget.text2,
+              
             ],
           ),
         ));
@@ -61,14 +62,14 @@ class _TextAndContainerWidgetState extends State<TextAndContainerWidget> {
 class TextAndContainerButton extends StatefulWidget {
    double height;
    double width;
-  final String image;
+  final String? image;
   final Text text1;
 
   TextAndContainerButton({
     super.key,
     required this.height,
     required this.width,
-    required this.image,
+     this.image,
     required this.text1,
   });
 
@@ -90,17 +91,17 @@ class _TextAndContainerButtonState extends State<TextAndContainerButton> {
         width: widget.width,
         decoration: BoxDecoration(
          color: Color.fromRGBO(217, 217, 217, 1),
-          borderRadius: BorderRadius.circular(30)
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Row(children: [
            Image.asset(
-              widget.image,
+              widget.image!,
               fit: BoxFit.cover,
-              width: 20,
+              width: 30,
               height: 20,
             ),
             const SizedBox(
-              width: 4,
+              width: 9,
             ),
             Expanded(child: 
             widget.text1),
