@@ -196,7 +196,7 @@ void showLoginDialog(BuildContext context) {
                       borderSidetextformfield: BorderSide.none,
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 20,
                     ),
                     TextFormFieldPers1(
                       isPass: true,
@@ -212,11 +212,15 @@ void showLoginDialog(BuildContext context) {
                   ],
                 )),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
-                Center(
-                  child: TextButton(
-                    onPressed: () {},
+                Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                  children:[
+                   TextButton(
+                    onPressed: () {
+                     
+                    },
                     child: const Text(
                       "Mot de passe oublié ?",
                       style: TextStyle(
@@ -225,15 +229,15 @@ void showLoginDialog(BuildContext context) {
                           fontSize: 10),
                     ),
                   ),
-                ),
+                ]),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: BUTTON_COLOR,
-                    minimumSize: const Size(150, 50),
+                    minimumSize: const Size(260, 60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -248,13 +252,15 @@ void showLoginDialog(BuildContext context) {
                   ),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //showLoginDialog(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(42, 114, 221, 1),
-                      minimumSize: const Size(30, 40),
+                      minimumSize: const Size(30, 60),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -278,9 +284,9 @@ void showLoginDialog(BuildContext context) {
                       ],
                     )),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
-                Wrap(
+                Row(
                   children: [
                     const Text(
                       "Vous n'avez pas encore de compte?",
@@ -291,6 +297,7 @@ void showLoginDialog(BuildContext context) {
                     ),
                     TextButton(
                       onPressed: () {
+                       showLoginDialog2(context);
                         
                       },
                       child: const Text(
@@ -475,7 +482,9 @@ void showLoginDialog2(BuildContext context) {
                 
                 
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showLoginDialog2(context);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: BUTTON_COLOR,
                     fixedSize: const Size(233, 45),
@@ -536,7 +545,7 @@ void showLoginDialog2(BuildContext context) {
                     ),
                     TextButton(
                       onPressed: () {
-                        showAboutDialog(context: context);
+                        showLoginDialog(context);
                       },
                       child: const Text(
                         "se connecter",

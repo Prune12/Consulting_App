@@ -1231,7 +1231,9 @@ int currentIndex = 0;
                                       MediaQuery.of(context).size.width * 0.3,
                                   left: 20),
                               child: TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showLoginDialog(context);
+                                  },
                                   child: const Text(
                                     "Commencez maintenant --->",
                                     style: TextStyle(
