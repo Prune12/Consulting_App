@@ -43,7 +43,7 @@ class _ServiceContainerWidgetState extends State<ServiceContainerWidget> {
     return InkWell(
       onTap: () {},
       child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 300),
+          constraints: const BoxConstraints(maxWidth: 300,minHeight: 500),
           child: Card(
             elevation: 5.0,
             borderOnForeground: true,
@@ -62,6 +62,7 @@ class _ServiceContainerWidgetState extends State<ServiceContainerWidget> {
                         image: DecorationImage(
                             image: widget.imagecontainer, fit: BoxFit.cover),
                       ),
+                      //  child: SizedBox.expand(),
                     ),
                     Container(
                       height: 20.0,

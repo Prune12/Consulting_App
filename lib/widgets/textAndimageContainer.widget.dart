@@ -1,5 +1,6 @@
 
 
+import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
 //widget portable qui affiche les images et les textes
@@ -90,12 +91,13 @@ class _TextAndContainerButtonState extends State<TextAndContainerButton> {
         height: widget.height,
         width: widget.width,
         decoration: BoxDecoration(
-         color: Color.fromRGBO(217, 217, 217, 1),
+         color: BUTTON_COLOR,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(children: [
            Image.asset(
               widget.image!,
+              color: Colors.white,
               fit: BoxFit.cover,
               width: 30,
               height: 20,
@@ -104,37 +106,67 @@ class _TextAndContainerButtonState extends State<TextAndContainerButton> {
               width: 9,
             ),
             Expanded(child: 
-            widget.text1),
+            widget.text1,),
 
         ]),
       ),
     );
-    // ElevatedButton(
-    //     onPressed: () {},
-    //     style: ElevatedButton.styleFrom(
-    //       foregroundColor: Colors.white,
-    //       backgroundColor: Colors.grey,
-    //       // maximumSize: Size(400, 200),
-    //       shape: RoundedRectangleBorder(
-    //         borderRadius: BorderRadius.circular(20.0),
-    //       ),
-    //     ),
-    //     child: Row(
-    //       children: [
-    //         Image.asset(
-    //           widget.image,
-    //           fit: BoxFit.cover,
-    //           width: 10,
-    //           height: 10,
-    //         ),
-    //         const SizedBox(
-    //           width: 4,
-    //         ),
-    //         widget.text1
-    //       ],
-    //     ));
+ 
   }
 }
+
+//widget button comprenant sans image
+class TextAndContainerButton2 extends StatefulWidget {
+   double height;
+   double width;
+  
+  final Text text1;
+
+  TextAndContainerButton2({
+    super.key,
+    required this.height,
+    required this.width,
+     
+    required this.text1,
+  });
+
+  @override
+  State<TextAndContainerButton2> createState() => _TextAndContainerButton2State();
+}
+
+//widget reutilisable permettant de creer des annonces
+class _TextAndContainerButton2State extends State<TextAndContainerButton2> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){},
+      // borderRadius: BorderRadius.circular(20),
+      // radius: 60,
+      child: Container(
+        padding: EdgeInsets.all(20.0),
+        height: widget.height,
+        width: widget.width,
+        decoration: BoxDecoration(
+         color: BUTTON_COLOR,
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Row(children: [
+           
+            const SizedBox(
+              width: 9,
+            ),
+            Expanded(child: 
+            widget.text1,),
+
+        ]),
+      ),
+    );
+ 
+  }
+}
+
+
+
 
 //widget reutilisable permettant d'afficher les service
 class TextAndContainerAndbuttonWidget extends StatefulWidget {

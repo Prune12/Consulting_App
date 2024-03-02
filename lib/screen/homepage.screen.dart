@@ -156,25 +156,25 @@ class _homepageState extends State<homepage> {
             "c'est une tres bonne application, et j'arrive à publier mes offres et à postules pour des offres sans soucis"),
   ];
   final List<ConsultingContainerWidget> consultingWidgets = [
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
   ];

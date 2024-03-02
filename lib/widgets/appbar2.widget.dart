@@ -97,7 +97,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 Navigator.pushReplacementNamed(context, AppRoutes.offre);
               }),
               buildMenuButton(3, 'Consultants', () {
-                Navigator.pushReplacementNamed(context, AppRoutes.offre);
+                //Navigator.pushReplacementNamed(context, AppRoutes.offre);
               }),
               buildMenuButton(4, 'Actualités', () {
                 Navigator.pushReplacementNamed(context, AppRoutes.actuality);
@@ -478,11 +478,11 @@ void showLoginDialog2(BuildContext context) {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: BUTTON_COLOR,
-                    minimumSize: const Size(150, 50),
+                    fixedSize: const Size(233, 45),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    padding: const EdgeInsets.all(8),
+                    //padding: const EdgeInsets.all(8),
                   ),
                   child: const Text(
                     "S'inscrire",
@@ -499,7 +499,7 @@ void showLoginDialog2(BuildContext context) {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(42, 114, 221, 1),
-                      minimumSize: const Size(30, 40),
+                      minimumSize: const Size(150, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -525,7 +525,7 @@ void showLoginDialog2(BuildContext context) {
                 const SizedBox(
                   height: 8,
                 ),
-                Wrap(
+                Row(
                   children: [
                     const Text(
                       "Vous avez deja un compte?",

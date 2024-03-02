@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
 import 'package:consulting_app/widgets/commentaireContainer.widget.dart';
@@ -35,9 +36,9 @@ class _NewhomepageState extends State<Newhomepage> {
   //liste d'images
   final List<String> imagePaths = [
     'assets/images/DRK_B1.JPG',
-    'assets/images/DRK_4857.JPG',
+    // 'assets/images/DRK_4859.JPG',
     'assets/images/DRK_4706.JPG',
-    'assets/images/finance.jpg',
+    'assets/images/DRK_4857.JPG',
   ];
 
 int currentIndex = 0;
@@ -265,25 +266,25 @@ int currentIndex = 0;
             "c'est une tres bonne application, et j'arrive à publier mes offres et à postules pour des offres sans soucis"),
   ];
   final List<ConsultingContainerWidget> consultingWidgets = [
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
   ];
@@ -318,7 +319,7 @@ int currentIndex = 0;
              Container(
               padding:EdgeInsets.only(top: MediaQuery.of(context).size.height*0.8,),
           width: MediaQuery.of(context).size.width ,
-          height: 1300,
+          height: 1100,
           child: AnimatedSwitcher(
             duration: Duration(seconds: 1),
             child: Image.asset(
@@ -326,7 +327,7 @@ int currentIndex = 0;
               key: ValueKey<int>(currentIndex),
               fit: BoxFit.fill,
               width: MediaQuery.of(context).size.width,
-      height: 1300
+      height: 1100
             ),)),
 
 
@@ -517,7 +518,7 @@ int currentIndex = 0;
                                 text1: const Text(
                                   'Communication ',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ),
                             ),
@@ -529,7 +530,7 @@ int currentIndex = 0;
                                 text1: const Text(
                                   'Finances',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ),
                             ),
@@ -541,7 +542,7 @@ int currentIndex = 0;
                                 text1: const Text(
                                   'Special Can Total 2023',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ),
                             ),
@@ -553,7 +554,7 @@ int currentIndex = 0;
                                 text1: const Text(
                                     'BTP (Bâtiment et travaux public)',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 20)),
+                                        color: Colors.white, fontSize: 20)),
                               ),
                             ),
                             ZoomOnHover(
@@ -564,7 +565,7 @@ int currentIndex = 0;
                                 text1: const Text(
                                   'Marketing Digital , Actuariat && Teleinformatique ',
                                   style: TextStyle(
-                                      color: Colors.black, fontSize: 20),
+                                      color: Colors.white, fontSize: 20),
                                 ),
                               ),
                             ),
@@ -575,7 +576,7 @@ int currentIndex = 0;
                                 image: 'assets/images/ballonfeuille.png',
                                 text1: const Text('Agriculture/Agronomie',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 20)),
+                                        color: Colors.white, fontSize: 20)),
                               ),
                             ),
                             ZoomOnHover(
@@ -585,7 +586,7 @@ int currentIndex = 0;
                                 image: 'assets/images/climatiseur.png',
                                 text1: const Text('Froid et climatisation',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 20)),
+                                        color: Colors.white, fontSize: 20)),
                               ),
                             ),
                             ZoomOnHover(
@@ -595,7 +596,7 @@ int currentIndex = 0;
                                 image: 'assets/images/etoile.png',
                                 text1: const Text('Evenementiels',
                                     style: TextStyle(
-                                        color: Colors.black, fontSize: 20)),
+                                        color: Colors.white, fontSize: 20)),
                               ),
                             ),
                           ];
@@ -643,7 +644,10 @@ int currentIndex = 0;
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
                             datetext: "12 septembre 2020",
-                            onpressed: () {},
+                            onpressed: () {
+                              Navigator.pushReplacementNamed(context, AppRoutes.desoffre);
+                            },
+                            
                           ),
                           const SizedBox(height: 10.0),
                           OffresWidget(
@@ -651,14 +655,18 @@ int currentIndex = 0;
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
                             datetext: "12 septembre 2020",
-                            onpressed: () {},
+                            onpressed: () {
+                              Navigator.pushReplacementNamed(context, AppRoutes.OffreEncours);
+                            },
                           ),
                           OffresWidget(
                             imageoffre: "assets/images/image-22-1.jpg",
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
                             datetext: "12 septembre 2020",
-                            onpressed: () {},
+                           onpressed: () {
+                              Navigator.pushReplacementNamed(context, AppRoutes.OffreTermine);
+                            },
                           ),
                         ],
                       ),
@@ -885,9 +893,9 @@ int currentIndex = 0;
                         const SizedBox(height: 35.0),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.height * 0.9),
+                              top: MediaQuery.of(context).size.height * 0.9,left:50),
                           child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 _showButton
                                     ? FloatingActionButton(
@@ -896,13 +904,13 @@ int currentIndex = 0;
                                             _showButton = false;
                                           });
                                         },
-                                        child: Image.asset(
-                                            "assets/images/money.png",
-                                            color: Colors.black),
                                         backgroundColor: const Color.fromRGBO(
                                             181, 185, 160, 0.55),
                                         heroTag: null,
                                         elevation: 20,
+                                        child: Image.asset(
+                                            "assets/images/money.png",
+                                            color: Colors.black,width: 200,height: 200,),
                                       )
                                     : ElevatedButton(
                                         onPressed: () {

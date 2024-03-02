@@ -12,7 +12,8 @@ class ConsultingContainerWidget extends StatefulWidget {
   final String? date;
   final String? nameimage;
   final Icon? iconlocalisation;
-  const ConsultingContainerWidget(
+  VoidCallback? tap;
+   ConsultingContainerWidget(
       {super.key,
       this.securityicon,
       this.verifiertext,
@@ -21,7 +22,9 @@ class ConsultingContainerWidget extends StatefulWidget {
       required this.nomconsultant,
       required this.imageconsultant,
       this.nameimage,
-      this.iconlocalisation});
+      this.iconlocalisation,
+      this.tap
+      });
 
   @override
   State<ConsultingContainerWidget> createState() =>
@@ -32,7 +35,7 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: widget.tap,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 300),
           child: Card(
@@ -64,7 +67,7 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
                                 TextStyle(color: Colors.green, fontSize: 12.0),
                           ),
                       const SizedBox(
-                        width: 10.0,
+                        width: 180.0,
                       ),
                       Image.asset(
                         widget.nameimage ?? 'assets/images/personnal.png',
