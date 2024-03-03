@@ -97,7 +97,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 Navigator.pushReplacementNamed(context, AppRoutes.offre);
               }),
               buildMenuButton(3, 'Consultants', () {
-                //Navigator.pushReplacementNamed(context, AppRoutes.offre);
+                Navigator.pushReplacementNamed(context, AppRoutes.createposte);
               }),
               buildMenuButton(4, 'Actualités', () {
                 Navigator.pushReplacementNamed(context, AppRoutes.actuality);

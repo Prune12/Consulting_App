@@ -914,7 +914,7 @@ int currentIndex = 0;
                                       )
                                     : ElevatedButton(
                                         onPressed: () {
-                                          // Action à effectuer lorsque le bouton déroulant est cliqué
+                                          Navigator.pushReplacementNamed(context, AppRoutes.devenirconsult);
                                         },
                                         child: const Text(
                                             "GAGNER DE L'ARGENT EN TRAVAILLANT EN FREELANCE",

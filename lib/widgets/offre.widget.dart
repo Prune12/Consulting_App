@@ -31,7 +31,7 @@ class _OffresWidgetState extends State<OffresWidget> {
         onTap: widget.ontap,
         child: Container(
           width: MediaQuery.of(context).size.width * 0.7,
-          height: MediaQuery.of(context).size.height * 0.25,
+          height: MediaQuery.of(context).size.height * 0.28,
           child: Card(
             elevation: 10.0,
             child: Row(
