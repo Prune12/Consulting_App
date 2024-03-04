@@ -156,25 +156,25 @@ class _homepageState extends State<homepage> {
             "c'est une tres bonne application, et j'arrive à publier mes offres et à postules pour des offres sans soucis"),
   ];
   final List<ConsultingContainerWidget> consultingWidgets = [
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
-    const ConsultingContainerWidget(
+     ConsultingContainerWidget(
         nomconsultant: "Matthieu",
         imageconsultant: AssetImage('assets/images/boss.jpg')),
   ];
@@ -182,7 +182,7 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // Passez le widget appbar que vous voulez utiliser comme paramètre appBar
-      appBar:  MyAppBar(),
+      appBar:  const MyAppBar(),
       endDrawer: const Drawermenu(),
 
       // Passez le widget de contenu principal que vous voulez afficher comme paramètre body
@@ -318,7 +318,7 @@ class _homepageState extends State<homepage> {
                       width: MediaQuery.of(context).size.width,
                       height: 324,
                       color: Colors.white,
-                      child: SingleChildScrollView(
+                      child: const SingleChildScrollView(
                         child: Wrap(
                           alignment: WrapAlignment.spaceBetween,
                           direction: Axis.horizontal,
@@ -328,13 +328,13 @@ class _homepageState extends State<homepage> {
                                 height: 240.0,
                                 width: 300,
                                 image:
-                                    const AssetImage('assets/images/rosee.png'),
-                                text1: const Text(
+                                    AssetImage('assets/images/rosee.png'),
+                                text1: Text(
                                   "Trouver un consultant",
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 24.0),
                                 ),
-                                text2: const Text(
+                                text2: Text(
                                   "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 16.0),
@@ -343,13 +343,13 @@ class _homepageState extends State<homepage> {
                               height: 240.0,
                               width: 300,
                               image:
-                                  const AssetImage('assets/images/imag22.png'),
-                              text1: const Text(
+                                  AssetImage('assets/images/imag22.png'),
+                              text1: Text(
                                 "Trouver un consultant",
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 24.0),
                               ),
-                              text2: const Text(
+                              text2: Text(
                                 "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 16.0),
@@ -359,13 +359,13 @@ class _homepageState extends State<homepage> {
                                 height: 240.0,
                                 width: 300,
                                 image:
-                                    const AssetImage('assets/images/img11.png'),
-                                text1: const Text(
+                                    AssetImage('assets/images/img11.png'),
+                                text1: Text(
                                   "Trouver un consultant",
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 24.0),
                                 ),
-                                text2: const Text(
+                                text2: Text(
                                   "Aliquam pretium fringilla augue orci dictum sollicitudin purus risus laoreet justo.",
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 16.0),
