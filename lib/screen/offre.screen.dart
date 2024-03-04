@@ -250,7 +250,6 @@ class _ResultsViewState extends State<ResultsView> {
                 ResultCard(),
                 ResultCard(),
                 ResultCard(),
-                ResultCard(),
               ]),
             ),
           ),
