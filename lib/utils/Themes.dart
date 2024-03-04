@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 
-const APPBAR_COLOR= Color.fromRGBO(252, 185, 0, 1);
+const APPBAR_COLOR= Colors.yellow;
 const BUTTON_COLOR= Color.fromRGBO(44, 41, 41, 1);
 
 var themeData=ThemeData(

@@ -23,19 +23,19 @@ class _DescriptionOffrePageState extends State<DescriptionOffrePage> {
             children: [
               Stack(
                 children:[
-                  Container(
-                    width:MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height*2,
-                    child:Image.asset(
-                      "assets/images/csting.jpeg",
-                      fit:BoxFit.cover,
-                    width:MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height*2,
+                  // Container(
+                  //   width:MediaQuery.of(context).size.width,
+                  //   height: MediaQuery.of(context).size.height*2,
+                  //   child:Image.asset(
+                  //     "assets/images/csting.jpeg",
+                  //     fit:BoxFit.cover,
+                  //   width:MediaQuery.of(context).size.width,
+                  //   height: MediaQuery.of(context).size.height*2,
                       
                          
-                    ),                  
+                  //   ),                  
                     
-                    ),
+                  //   ),
             
               Column(children: [
                 Padding(

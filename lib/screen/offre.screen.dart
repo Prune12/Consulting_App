@@ -74,7 +74,7 @@ class _PublishOfferState extends State<PublishOffer> {
                   width: MediaQuery.of(context).size.width * 0.9,
                   height: 1000,
                   padding: const EdgeInsets.only(top: 50),
-                  color: const Color.fromRGBO(0, 0, 0, 0.64),
+                   color: const Color.fromRGBO(0, 0, 0, 0.64),
                   child: Column(
                     children: [
                       ZoomOnHover(
@@ -86,7 +86,7 @@ class _PublishOfferState extends State<PublishOffer> {
                               top: 50, left: 20, right: 20),
                           height: 300,
                           decoration: BoxDecoration(
-                            color: const Color.fromRGBO(247, 252, 0, 0.86),
+                            color: APPBAR_COLOR,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: const Column(
@@ -128,7 +128,7 @@ class _PublishOfferState extends State<PublishOffer> {
                               top: 50, left: 20, right: 20),
                           height: 300,
                           decoration: BoxDecoration(
-                            color: const Color.fromRGBO(247, 252, 0, 0.86),
+                            color: APPBAR_COLOR,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: const Column(
@@ -171,7 +171,7 @@ class _PublishOfferState extends State<PublishOffer> {
                                 height: 300,
                                 decoration: BoxDecoration(
                                   color:
-                                      const Color.fromRGBO(247, 252, 0, 0.86),
+                                      APPBAR_COLOR,
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                                 child: const Column(

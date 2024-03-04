@@ -41,7 +41,7 @@ class _OffresWidgetState extends State<OffresWidget> {
                   Container(
                     width: 30,
                     height: MediaQuery.of(context).size.height * 0.23,
-                    color: APPBAR_COLOR,
+                    color: Color.fromRGBO(252, 185, 0, 1),
                   ),
                   const SizedBox(width: 10),
                   Container(
@@ -154,7 +154,7 @@ class _OffresWidgetState extends State<OffresWidget> {
                             onPressed: widget.onpressed,
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
-                                side: const BorderSide(color: APPBAR_COLOR),
+                                side: const BorderSide(color: Color.fromRGBO(252, 185, 0, 1)),
                                 fixedSize: const Size(100, 30),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -162,7 +162,7 @@ class _OffresWidgetState extends State<OffresWidget> {
                             child: const Text(
                               "Postuler",
                               style: TextStyle(
-                                  color: APPBAR_COLOR,
+                                  color: Color.fromRGBO(252, 185, 0, 1),
                                   fontFamily: 'popping',
                                   fontSize: 13),
                             ),

@@ -23,7 +23,7 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
-      backgroundColor: Colors.yellow[700],
+      backgroundColor: APPBAR_COLOR,
       elevation: 4.0,
       shadowColor: Colors.grey[400],
       title: Padding(
@@ -81,7 +81,7 @@ class _MyAppBarState extends State<MyAppBar> {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48.0),
         child: Container(
-          color: Colors.yellow[700],
+          color: APPBAR_COLOR,
           child: Wrap(
             alignment: WrapAlignment.spaceBetween,
             direction: Axis.horizontal,

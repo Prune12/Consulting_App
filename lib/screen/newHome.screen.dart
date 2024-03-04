@@ -473,7 +473,7 @@ int currentIndex = 0;
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Colors.white,
-                            backgroundColor: Colors.yellow,
+                            backgroundColor: APPBAR_COLOR,
                             fixedSize: const Size(507, 45),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
@@ -1045,7 +1045,7 @@ int currentIndex = 0;
                         width: MediaQuery.of(context).size.width * 0.98,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.yellow,
+                          color: APPBAR_COLOR,
                         ),
                         child: Column(children: [
                           const SizedBox(height: 10.0),
