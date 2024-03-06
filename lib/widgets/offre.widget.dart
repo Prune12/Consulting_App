@@ -91,9 +91,9 @@ class _OffresWidgetState extends State<OffresWidget> {
                         child: Text(
                           widget.datetext,
                           style: const TextStyle(
-                              color: Color.fromARGB(255, 3, 6, 29),
+                              color: Colors.grey,
                               fontFamily: 'popping',
-                              fontSize: 12),
+                              fontSize: 11),
                         ),
                       ),
                       
@@ -154,6 +154,7 @@ class _OffresWidgetState extends State<OffresWidget> {
                             onPressed: widget.onpressed,
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
+                                shadowColor: const Color.fromARGB(255, 218, 217, 217),
                                 side: const BorderSide(color: Color.fromRGBO(252, 185, 0, 1)),
                                 fixedSize: const Size(100, 30),
                                 shape: RoundedRectangleBorder(

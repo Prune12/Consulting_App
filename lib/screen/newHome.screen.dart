@@ -643,10 +643,11 @@ int currentIndex = 0;
                             imageoffre: "assets/images/image-22-1.jpg",
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
-                            datetext: "12 septembre 2020",
+                            datetext: "il y a 1 heure",
                             onpressed: () {
                               Navigator.pushReplacementNamed(context, AppRoutes.desoffre);
                             },
+                            ontap:(){}
                             
                           ),
                           const SizedBox(height: 10.0),
@@ -654,19 +655,21 @@ int currentIndex = 0;
                             imageoffre: "assets/images/image-22-1.jpg",
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
-                            datetext: "12 septembre 2020",
+                            datetext: "il y a 3 jours",
                             onpressed: () {
-                              Navigator.pushReplacementNamed(context, AppRoutes.OffreEncours);
+                              Navigator.pushReplacementNamed(context, AppRoutes.desoffre);
                             },
+                             ontap:(){}
                           ),
                           OffresWidget(
                             imageoffre: "assets/images/image-22-1.jpg",
                             descriptiontext: "Strategies de consulting",
                             pricetext: "150.000 FCFA",
-                            datetext: "12 septembre 2020",
+                            datetext: "il y a 2 jours",
                            onpressed: () {
-                              Navigator.pushReplacementNamed(context, AppRoutes.OffreTermine);
+                              Navigator.pushReplacementNamed(context, AppRoutes.desoffre);
                             },
+                             ontap:(){}
                           ),
                         ],
                       ),
