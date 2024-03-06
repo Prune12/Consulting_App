@@ -23,7 +23,7 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
-      backgroundColor: Colors.yellow[700],
+      backgroundColor: APPBAR_COLOR,
       elevation: 4.0,
       shadowColor: Colors.grey[400],
       title: Padding(
@@ -81,7 +81,7 @@ class _MyAppBarState extends State<MyAppBar> {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(48.0),
         child: Container(
-          color: Colors.yellow[700],
+          color: APPBAR_COLOR,
           child: Wrap(
             alignment: WrapAlignment.spaceBetween,
             direction: Axis.horizontal,
@@ -97,7 +97,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 Navigator.pushReplacementNamed(context, AppRoutes.offre);
               }),
               buildMenuButton(3, 'Consultants', () {
-                Navigator.pushReplacementNamed(context, AppRoutes.offre);
+                Navigator.pushReplacementNamed(context, AppRoutes.consult);
               }),
               buildMenuButton(4, 'Actualités', () {
                 Navigator.pushReplacementNamed(context, AppRoutes.actuality);
@@ -196,7 +196,7 @@ void showLoginDialog(BuildContext context) {
                       borderSidetextformfield: BorderSide.none,
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 20,
                     ),
                     TextFormFieldPers1(
                       isPass: true,
@@ -212,11 +212,15 @@ void showLoginDialog(BuildContext context) {
                   ],
                 )),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
-                Center(
-                  child: TextButton(
-                    onPressed: () {},
+                Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                  children:[
+                   TextButton(
+                    onPressed: () {
+                     
+                    },
                     child: const Text(
                       "Mot de passe oublié ?",
                       style: TextStyle(
@@ -225,15 +229,15 @@ void showLoginDialog(BuildContext context) {
                           fontSize: 10),
                     ),
                   ),
-                ),
+                ]),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: BUTTON_COLOR,
-                    minimumSize: const Size(150, 50),
+                    minimumSize: const Size(260, 60),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -248,13 +252,15 @@ void showLoginDialog(BuildContext context) {
                   ),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //showLoginDialog(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(42, 114, 221, 1),
-                      minimumSize: const Size(30, 40),
+                      minimumSize: const Size(30, 60),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -278,9 +284,9 @@ void showLoginDialog(BuildContext context) {
                       ],
                     )),
                 const SizedBox(
-                  height: 8,
+                  height: 20,
                 ),
-                Wrap(
+                Row(
                   children: [
                     const Text(
                       "Vous n'avez pas encore de compte?",
@@ -291,6 +297,7 @@ void showLoginDialog(BuildContext context) {
                     ),
                     TextButton(
                       onPressed: () {
+                       showLoginDialog2(context);
                         
                       },
                       child: const Text(
@@ -475,14 +482,16 @@ void showLoginDialog2(BuildContext context) {
                 
                 
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showLoginDialog2(context);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: BUTTON_COLOR,
-                    minimumSize: const Size(150, 50),
+                    fixedSize: const Size(233, 45),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    padding: const EdgeInsets.all(8),
+                    //padding: const EdgeInsets.all(8),
                   ),
                   child: const Text(
                     "S'inscrire",
@@ -499,7 +508,7 @@ void showLoginDialog2(BuildContext context) {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromRGBO(42, 114, 221, 1),
-                      minimumSize: const Size(30, 40),
+                      minimumSize: const Size(150, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -525,7 +534,7 @@ void showLoginDialog2(BuildContext context) {
                 const SizedBox(
                   height: 8,
                 ),
-                Wrap(
+                Row(
                   children: [
                     const Text(
                       "Vous avez deja un compte?",
@@ -536,7 +545,7 @@ void showLoginDialog2(BuildContext context) {
                     ),
                     TextButton(
                       onPressed: () {
-                        showAboutDialog(context: context);
+                        showLoginDialog(context);
                       },
                       child: const Text(
                         "se connecter",

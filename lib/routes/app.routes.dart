@@ -10,5 +10,11 @@ class AppRoutes{
   static const String actuality='/lib/screen/Actuality.screen.dart';
   static const String consult='/lib/screen/consultant.screen.dart';
   static const String offre = '/lib/screen/offre.screen.dart';
+  static const String desoffre = '/lib/screen/descriptionOffre.screen.dart';
+  static const String OffreEncours='/lib/screen/OffreEncours.screen.dart';
+  static const String OffreTermine='/lib/screen/OffreTermine.screen.dart';
+  static const String createposte='/lib/screen/CreerPoste.screen.dart';
+  static const String devenirconsult='/lib/screen/devenirConsultant.screen.dart';
+
 
 }

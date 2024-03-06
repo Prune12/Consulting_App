@@ -1,5 +1,6 @@
 //cette page permet de creer un widget reutilisable pour afficher la liste des consultants
 
+import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
 class ConsultingContainerWidget extends StatefulWidget {
@@ -11,7 +12,8 @@ class ConsultingContainerWidget extends StatefulWidget {
   final String? date;
   final String? nameimage;
   final Icon? iconlocalisation;
-  const ConsultingContainerWidget(
+  VoidCallback? tap;
+   ConsultingContainerWidget(
       {super.key,
       this.securityicon,
       this.verifiertext,
@@ -20,7 +22,9 @@ class ConsultingContainerWidget extends StatefulWidget {
       required this.nomconsultant,
       required this.imageconsultant,
       this.nameimage,
-      this.iconlocalisation});
+      this.iconlocalisation,
+      this.tap
+      });
 
   @override
   State<ConsultingContainerWidget> createState() =>
@@ -31,7 +35,7 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: widget.tap,
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 300),
           child: Card(
@@ -63,7 +67,7 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
                                 TextStyle(color: Colors.green, fontSize: 12.0),
                           ),
                       const SizedBox(
-                        width: 10.0,
+                        width: 180.0,
                       ),
                       Image.asset(
                         widget.nameimage ?? 'assets/images/personnal.png',
@@ -131,8 +135,24 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
                         color: Colors.grey),
                   ),
                 ),
+                 const SizedBox(
+                  height: 15.0,
+                ),
+                Center(
+                    // padding: const EdgeInsets.only(top: 50.0, right: 120.0),
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: APPBAR_COLOR,
+                          fixedSize: const Size(220, 30),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )
+                        ),
+                        child: const Text("Devenir consultant",style:TextStyle(fontFamily: 'popping',fontSize: 14,color: Colors.black)),
+                        )),
                 const SizedBox(
-                  height: 12.0,
+                  height: 8.0,
                 ),
                 Container(
                     padding: const EdgeInsets.only(top: 50.0, right: 120.0),

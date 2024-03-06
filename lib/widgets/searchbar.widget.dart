@@ -219,8 +219,8 @@ class _Searchbar2State extends State<Searchbar2> {
         if (constraints.maxWidth > 600) {
           // Large screen layout
           return Container(
-            height: 70.0,
-            width: 900.0,
+            height: MediaQuery.of(context).size.height*0.1,
+            width: MediaQuery.of(context).size.width*0.85,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: Colors.white,
