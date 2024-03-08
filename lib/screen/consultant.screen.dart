@@ -2,7 +2,7 @@
 import 'dart:async';
 
 import 'package:consulting_app/routes/app.routes.dart';
-import 'package:consulting_app/utils/Themes.dart';
+import 'package:consulting_app/screen/dashboard.screen.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
 import 'package:consulting_app/widgets/footer.widget.dart';
 import 'package:flutter/material.dart';
@@ -79,27 +79,31 @@ getData() async {
                     child: Column(
                       children: [
                         const BlackBanner(),
-                        
-                           Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.85,top:MediaQuery.of(context).size.height*0.06),
-                        child:ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, AppRoutes.devenirconsult);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                              fixedSize: const Size(140, 50),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              shadowColor: const Color.fromARGB(255, 170, 166, 166)),
-                          child: const Text(
-                            "Devenir Consultant",
-                            style: TextStyle(
-                                fontFamily: 'popping',
-                                fontSize: 11,
-                                color:  Color.fromRGBO(252, 185, 0, 1)                 ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width * 0.85,
+                              top: MediaQuery.of(context).size.height * 0.06),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.devenirconsult);
+                            },
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                fixedSize: const Size(140, 50),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(5)),
+                                shadowColor:
+                                    const Color.fromARGB(255, 170, 166, 166)),
+                            child: const Text(
+                              "Devenir Consultant",
+                              style: TextStyle(
+                                  fontFamily: 'popping',
+                                  fontSize: 11,
+                                  color: Color.fromRGBO(252, 185, 0, 1)),
+                            ),
                           ),
-                        ),),
+                        ),
                         Expanded(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
@@ -107,9 +111,7 @@ getData() async {
                                     MediaQuery.of(context).size.width * 0.65),
                             child: Column(
                               children: [
-
                                 const CustomSearchBar(),
-                       
                                 Expanded(
                                   child: Row(
                                     crossAxisAlignment:
@@ -155,7 +157,6 @@ getData() async {
                             ),
                           ),
                         ),
-                        
                         const SizedBox(
                           height: 40,
                         ),
@@ -294,41 +295,18 @@ class _ResultsViewState extends State<ResultsView> {
             alignment: Alignment.topRight,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.42,
-              child: Column(children: [
-                ResultCard(
-                  
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                  
-                 
-                ),
-                ResultCard(
-                  
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                 
-                ),
-                ResultCard(
-                  
-                ),
-                ResultCard(
-                  
-                ),
+              child: const Column(children: [
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
+                ResultCard(),
               ]),
             ),
           ),
@@ -410,10 +388,7 @@ class CustomSearchBar extends StatelessWidget {
 }
 
 class ResultCard extends StatefulWidget {
-  
-  ResultCard(
-      {super.key
-      });
+  const ResultCard({super.key});
 
   @override
   State<ResultCard> createState() => _ResultCardState();
@@ -425,7 +400,11 @@ class _ResultCardState extends State<ResultCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+          return DashboardScreen();
+        }));
+      },
       child: MouseRegion(
         onEnter: (event) {
           setState(() {
@@ -484,10 +463,8 @@ class _ResultCardState extends State<ResultCard> {
                           child: Text(
                         "23 janvier 2021",
                         textAlign: TextAlign.end,
-                        style: TextStyle(color: Colors.grey,fontSize:12  ),
+                        style: TextStyle(color: Colors.grey, fontSize: 12),
                       )),
-                     
-                      
                     ],
                   ),
                   Align(
@@ -515,49 +492,44 @@ class _ResultCardState extends State<ResultCard> {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  
                   const Divider(),
                   Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      
-                            TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                "Commentaires",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 3, 6, 29),
-                                    fontFamily: 'popping',
-                                    fontSize: 12),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 2,
-                            ),
-                            
-                            
-                               const SizedBox(
-                              width: 2,
-                            ),
-
-                            TextButton(
-                              onPressed: () {},
-                              child: const Text(
-                                "Commenter",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 3, 6, 29),
-                                    fontFamily: 'popping',
-                                    fontSize: 12),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 300,
-                            ),
                       TextButton(
-                                    onPressed: () {},
-                                    child: const FaIcon(FontAwesomeIcons.whatsapp,
-                                         color: Colors.green),
-                                  ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Commentaires",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 3, 6, 29),
+                              fontFamily: 'popping',
+                              fontSize: 12),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      const SizedBox(
+                        width: 2,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Commenter",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 3, 6, 29),
+                              fontFamily: 'popping',
+                              fontSize: 12),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 300,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const FaIcon(FontAwesomeIcons.whatsapp,
+                            color: Colors.green),
+                      ),
                     ],
                   )
                 ]),
