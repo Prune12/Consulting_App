@@ -1,6 +1,7 @@
 /*cette page contient un widget reutilisable permettant de definir les differents blocs
 contenant les services proposés par l'application*/
 
+import 'package:consulting_app/routes/app.routes.dart';
 import 'package:flutter/material.dart';
 
 class ServiceContainerWidget extends StatefulWidget {
@@ -41,7 +42,8 @@ class _ServiceContainerWidgetState extends State<ServiceContainerWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+      },
       child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 300,minHeight: 500),
           child: Card(

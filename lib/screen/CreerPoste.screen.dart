@@ -1,4 +1,5 @@
 //page contient le formulaire à remplir pour creer un poste
+import 'dart:async';
 import 'dart:io';
 
 import 'package:consulting_app/utils/Themes.dart';
@@ -18,9 +19,37 @@ class CreatePostPage extends StatefulWidget {
 
 class _CreatePostPageState extends State<CreatePostPage> {
   String? _selectedSexe;
+  bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 3), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+@override
+void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        :Scaffold(
         appBar: const MyAppBar(),
         body: SingleChildScrollView(
           child: Wrap(
