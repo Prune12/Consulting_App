@@ -80,26 +80,7 @@ getData() async {
                       children: [
                         const BlackBanner(),
                         
-                           Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.85,top:MediaQuery.of(context).size.height*0.06),
-                        child:ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushReplacementNamed(
-                                context, AppRoutes.forfait);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black,
-                              fixedSize: const Size(130, 50),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              shadowColor: const Color.fromARGB(255, 170, 166, 166)),
-                          child: const Text(
-                            "Poster une offre",
-                            style: TextStyle(
-                                fontFamily: 'popping',
-                                fontSize: 12,
-                                color:  Color.fromRGBO(252, 185, 0, 1)                 ),
-                          ),
-                        ),),
+                        
                         Expanded(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
@@ -282,12 +263,36 @@ class _ResultsViewState extends State<ResultsView> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "Résultats de la recherche",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "Résultats de la recherche",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(
+                    context, AppRoutes.createposte);
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  shadowColor: const Color.fromARGB(255, 170, 166, 166)),
+              child: const Text(
+                "Poster une offre",
+                style: TextStyle(
+                    fontFamily: 'popping',
+                    fontSize: 11,
+                    color: Color.fromRGBO(252, 185, 0, 1)),
+              ),
+            ),
+          ],
         ),
         Expanded(
           child: Align(

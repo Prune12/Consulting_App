@@ -470,7 +470,9 @@ int currentIndex = 0;
                             top: MediaQuery.sizeOf(context).height * 0.135,
                             right: MediaQuery.sizeOf(context).width * 0.07),
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, AppRoutes.offre);
+                          },
                           style: ElevatedButton.styleFrom(
                             foregroundColor: Colors.white,
                             backgroundColor: APPBAR_COLOR,

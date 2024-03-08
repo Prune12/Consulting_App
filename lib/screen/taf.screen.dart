@@ -275,93 +275,64 @@ class _ResultsViewState extends State<ResultsView> {
               width: MediaQuery.of(context).size.width * 0.42,
               child: Column(children: [
                 ResultCard(
-                  elevatedbuttoncolor: Colors.red,
-                  elevatedbuttontext: "En cours",
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
+                        context, AppRoutes.desoffre);
                   },
                 ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.green,
-                  elevatedbuttontext: "Terminer",
+                 ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreTermine);
+                        context, AppRoutes.desoffre);
                   },
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.red,
-                  elevatedbuttontext: "En cours",
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
+                        context, AppRoutes.desoffre);
                   },
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.green,
-                  elevatedbuttontext: "Terminer",
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreTermine);
+                        context, AppRoutes.desoffre);
                   },
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.red,
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
+                        context, AppRoutes.desoffre);
                   },
-                  elevatedbuttontext: "En cours",
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.green,
-                  elevatedbuttontext: "Terminer",
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreTermine);
+                        context, AppRoutes.desoffre);
                   },
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.red,
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
+                        context, AppRoutes.desoffre);
                   },
-                  elevatedbuttontext: "En cours",
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.green,
-                  elevatedbuttontext: "Terminer",
+                ), ResultCard(
+                  elevatedbuttoncolor: BUTTON_COLOR,
+                  elevatedbuttontext: "postuler",
                   navigator: () {
                     Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreTermine);
+                        context, AppRoutes.desoffre);
                   },
                 ),
-                ResultCard(
-                  navigator: () {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
-                  },
-                  elevatedbuttoncolor: Colors.red,
-                  elevatedbuttontext: "En cours",
-                ),
-                ResultCard(
-                  elevatedbuttoncolor: Colors.green,
-                  elevatedbuttontext: "Terminer",
-                  navigator: () {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreTermine);
-                  },
-                ),
-                ResultCard(
-                  navigator: () {
-                    Navigator.pushReplacementNamed(
-                        context, AppRoutes.OffreEncours);
-                  },
-                  elevatedbuttoncolor: Colors.red,
-                  elevatedbuttontext: "En cours",
-                ),
+                
               ]),
             ),
           ),
@@ -539,7 +510,7 @@ class _ResultCardState extends State<ResultCard> {
                           style: const TextStyle(
                               fontFamily: 'popping',
                               fontSize: 8.5,
-                              color: Colors.white),
+                              color: APPBAR_COLOR),
                         ),
                       )
                     ],
