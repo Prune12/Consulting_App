@@ -1,4 +1,6 @@
 //cette page contient le code source pour la page du TAF
+import 'dart:async';
+
 import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
@@ -22,6 +24,7 @@ class _PublishOfferState extends State<PublishOffer> {
     super.initState();
     _scrollController = ScrollController();
     _scrollController.addListener(_handleScroll);
+    getData();
   }
 
   @override
@@ -29,6 +32,7 @@ class _PublishOfferState extends State<PublishOffer> {
     _scrollController.removeListener(_handleScroll);
     _scrollController.dispose();
     super.dispose();
+    
   }
 
   void _handleScroll() {
@@ -36,10 +40,33 @@ class _PublishOfferState extends State<PublishOffer> {
       _offset = _scrollController.offset;
     });
   }
+      bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 3), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        :Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 251, 255),
       appBar: const MyAppBar(),
       body: LayoutBuilder(
@@ -57,7 +84,7 @@ class _PublishOfferState extends State<PublishOffer> {
                         child:ElevatedButton(
                           onPressed: () {
                             Navigator.pushReplacementNamed(
-                                context, AppRoutes.createposte);
+                                context, AppRoutes.forfait);
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
@@ -578,8 +605,10 @@ class _ResultCardState extends State<ResultCard> {
                     children: [
                       const Text("200,000FCFA"),
                       IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.comment_outlined))
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, AppRoutes.sendmessage);
+                          },
+                          icon: const Icon(Icons.add_comment))
                     ],
                   )
                 ]),

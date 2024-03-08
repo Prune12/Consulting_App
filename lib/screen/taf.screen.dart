@@ -1,4 +1,6 @@
 //cette page contient le code source pour la page du TAF
+import 'dart:async';
+
 import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
@@ -22,6 +24,8 @@ class _TAFPageState extends State<TAFPage> {
     super.initState();
     _scrollController = ScrollController();
     _scrollController.addListener(_handleScroll);
+
+    getData();
   }
 
   @override
@@ -37,89 +41,110 @@ class _TAFPageState extends State<TAFPage> {
     });
   }
 
+  bool _enabled = true;
+  getData() async {
+    // fonction pour recuperer les donnees
+    Timer(const Duration(seconds: 3), () {
+      setState(() {
+        _enabled = !_enabled;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 251, 255),
-      appBar: const MyAppBar(),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) =>
-            SingleChildScrollView(
-                controller: _scrollController,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: IntrinsicHeight(
-                    child: Column(
-                      children: [
-                        const BlackBanner(),
-                        
-                         
-                        Expanded(
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.of(context).size.width * 0.65),
-                            child: Column(
-                              children: [
-
-                                const CustomSearchBar(),
-                       
-                                Expanded(
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        : Scaffold(
+            backgroundColor: const Color.fromARGB(255, 247, 251, 255),
+            appBar: const MyAppBar(),
+            body: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) =>
+                  SingleChildScrollView(
+                      controller: _scrollController,
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints(minHeight: constraints.maxHeight),
+                        child: IntrinsicHeight(
+                          child: Column(
+                            children: [
+                              const BlackBanner(),
+                              Expanded(
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                      maxWidth:
+                                          MediaQuery.of(context).size.width *
+                                              0.65),
+                                  child: Column(
                                     children: [
-                                      AsideView(
-                                        offset: _offset,
-                                        values: const [
-                                          "Toutes les categories",
-                                          "Administration publique / Public administration",
-                                          "Administration publique / Public administration",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Conception logiciel / Software design",
-                                        ],
+                                      const CustomSearchBar(),
+                                      Expanded(
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            AsideView(
+                                              offset: _offset,
+                                              values: const [
+                                                "Toutes les categories",
+                                                "Administration publique / Public administration",
+                                                "Administration publique / Public administration",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Conception logiciel / Software design",
+                                              ],
+                                            ),
+                                            const Expanded(
+                                                child: ResultsView()),
+                                          ],
+                                        ),
                                       ),
-                                      const Expanded(child: ResultsView()),
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              const Footer1()
+                            ],
                           ),
                         ),
-                        
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        const Footer1()
-                      ],
-                    ),
-                  ),
-                )),
-      ),
-    );
+                      )),
+            ),
+          );
   }
 }
 

@@ -1,4 +1,6 @@
 //cette page contient le code source pour la page du TAF
+import 'dart:async';
+
 import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/screen/dashboard.screen.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
@@ -23,6 +25,7 @@ class _ConsultantPageState extends State<ConsultantPage> {
     super.initState();
     _scrollController = ScrollController();
     _scrollController.addListener(_handleScroll);
+    getData();
   }
 
   @override
@@ -37,10 +40,33 @@ class _ConsultantPageState extends State<ConsultantPage> {
       _offset = _scrollController.offset;
     });
   }
+  bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 3), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        :Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 251, 255),
       appBar: const MyAppBar(),
       body: LayoutBuilder(

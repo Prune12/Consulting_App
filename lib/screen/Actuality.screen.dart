@@ -1,4 +1,6 @@
 //cette page contient le code source pour la page du TAF
+import 'dart:async';
+
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
 import 'package:consulting_app/widgets/footer.widget.dart';
@@ -19,6 +21,23 @@ class ActualityPage extends StatefulWidget {
 class _ActualityPageState extends State<ActualityPage> {
   final PageController _controller = PageController();
   final PageController _mescontainerController = PageController();
+bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 3), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+@override
+void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
+
 
   final List<ZoomOnHover> mesWidgets = [
     ZoomOnHover(
@@ -1654,7 +1673,20 @@ Container(
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        : Scaffold(
       appBar: const MyAppBar(),
       body: SingleChildScrollView(
         child: Wrap(

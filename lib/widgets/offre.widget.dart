@@ -1,7 +1,10 @@
 //widget reutilisable pour les offres
+import 'dart:async';
+
 import 'package:consulting_app/utils/Themes.dart';
-import 'package:consulting_app/widgets/zoomOnContainer.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
+
 
 class OffresWidget extends StatefulWidget {
   final String imageoffre;
@@ -17,17 +20,37 @@ class OffresWidget extends StatefulWidget {
       required this.pricetext,
       required this.datetext,
       required this.onpressed,
-      this.ontap
-      });
+      this.ontap});
 
   @override
   State<OffresWidget> createState() => _OffresWidgetState();
 }
 
 class _OffresWidgetState extends State<OffresWidget> {
+  bool isOk = false;
+bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 10), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+@override
+void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return
+    //  _enabled ? Center(child: CircularProgressIndicator()) :
+    Skeletonizer(
+      enabled: _enabled,
+      
+   child: InkWell(
         onTap: widget.ontap,
         child: Container(
           width: MediaQuery.of(context).size.width * 0.7,
@@ -85,7 +108,6 @@ class _OffresWidgetState extends State<OffresWidget> {
                               fontSize: 15),
                         ),
                       ),
-                      
                       Padding(
                         padding: const EdgeInsets.only(right: 170),
                         child: Text(
@@ -96,9 +118,8 @@ class _OffresWidgetState extends State<OffresWidget> {
                               fontSize: 11),
                         ),
                       ),
-                      
                       Padding(
-                        padding:  EdgeInsets.only(right: 100),
+                        padding: EdgeInsets.only(right: 100),
                         child: Row(
                           children: [
                             TextButton(
@@ -114,12 +135,9 @@ class _OffresWidgetState extends State<OffresWidget> {
                             const SizedBox(
                               width: 2,
                             ),
-                            
-                            
-                               const SizedBox(
+                            const SizedBox(
                               width: 2,
                             ),
-
                             TextButton(
                               onPressed: () {},
                               child: const Text(
@@ -130,7 +148,6 @@ class _OffresWidgetState extends State<OffresWidget> {
                                     fontSize: 12),
                               ),
                             ),
-                         
                           ],
                         ),
                       ),
@@ -154,8 +171,10 @@ class _OffresWidgetState extends State<OffresWidget> {
                             onPressed: widget.onpressed,
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.white,
-                                shadowColor: const Color.fromARGB(255, 218, 217, 217),
-                                side: const BorderSide(color: Color.fromRGBO(252, 185, 0, 1)),
+                                shadowColor:
+                                    const Color.fromARGB(255, 218, 217, 217),
+                                side: const BorderSide(
+                                    color: Color.fromRGBO(252, 185, 0, 1)),
                                 fixedSize: const Size(100, 30),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -172,6 +191,7 @@ class _OffresWidgetState extends State<OffresWidget> {
                   )
                 ]),
           ),
-        ));
+        ))) ;
+  
   }
 }

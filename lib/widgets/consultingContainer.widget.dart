@@ -1,5 +1,6 @@
 //cette page permet de creer un widget reutilisable pour afficher la liste des consultants
 
+import 'package:consulting_app/routes/app.routes.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
 
@@ -157,7 +158,10 @@ class _ConsultingContainerWidgetState extends State<ConsultingContainerWidget> {
                 Container(
                     padding: const EdgeInsets.only(top: 50.0, right: 120.0),
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+        Navigator.pushReplacementNamed(context, AppRoutes.listmessage);
+
+                        },
                         icon: const Icon(
                           Icons.messenger_rounded,
                           size: 20,
