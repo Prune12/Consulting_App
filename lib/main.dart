@@ -5,7 +5,10 @@ import 'package:consulting_app/screen/OffreEncours.screen.dart';
 import 'package:consulting_app/screen/consultant.screen.dart';
 import 'package:consulting_app/screen/descriptionOffre.screen.dart';
 import 'package:consulting_app/screen/devenirConsultant.screen.dart';
+import 'package:consulting_app/screen/forfaitPage.dart';
 import 'package:consulting_app/screen/homepage.screen.dart';
+import 'package:consulting_app/screen/listMessage.screen.dart';
+import 'package:consulting_app/screen/message.screen.dart';
 import 'package:consulting_app/screen/newHome.screen.dart';
 import 'package:consulting_app/screen/offre.screen.dart';
 import 'package:consulting_app/screen/offreTermine.screen.dart';
@@ -54,6 +57,9 @@ class _MyAppState extends State<MyApp> {
         AppRoutes.OffreTermine:(context) => const OffreTermine(),
         AppRoutes.createposte:(context) => const CreatePostPage(),
         AppRoutes.devenirconsult:(context) => const DevenirConsultantPage(),
+        AppRoutes.sendmessage:(context) => const MessagePage(),
+        AppRoutes.forfait:(context) => const ForfaitPage(),
+        AppRoutes.listmessage:(context) => const ListMessagePage(),
       },
       home:  Newhomepage(),
     );

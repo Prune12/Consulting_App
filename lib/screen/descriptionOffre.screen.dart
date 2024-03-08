@@ -1,5 +1,7 @@
 /*ici c'est la page de description des offres, cette page s'affiche lorsqu'on clique sur une offre et nous donne la description de l'offre en question et 
  et nous donne la possiblité de postuler à l'offre*/
+import 'dart:async';
+
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
 import 'package:consulting_app/widgets/footer.widget.dart';
@@ -13,9 +15,37 @@ class DescriptionOffrePage extends StatefulWidget {
 }
 
 class _DescriptionOffrePageState extends State<DescriptionOffrePage> {
+  bool _enabled = true;
+getData() async {
+ // fonction pour recuperer les donnees
+ Timer(const Duration(seconds: 3), () {
+      setState(() {
+    _enabled = ! _enabled;
+      });
+    });
+}
+@override
+void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _enabled
+        ? SingleChildScrollView(
+            child: Container(
+                color: Colors.white,
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: const Center(
+                    child: CircularProgressIndicator(
+                  // semanticsLabel: "Loading...",
+                  semanticsValue:"Loading...",
+                  color: Colors.blue,
+                ))),
+          )
+        :Scaffold(
         // backgroundColor: Colors.white,
         appBar: const MyAppBar(),
         body: SingleChildScrollView(
