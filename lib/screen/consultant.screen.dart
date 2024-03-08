@@ -40,16 +40,16 @@ class _ConsultantPageState extends State<ConsultantPage> {
       _offset = _scrollController.offset;
     });
   }
+
   bool _enabled = true;
-getData() async {
- // fonction pour recuperer les donnees
- Timer(const Duration(seconds: 3), () {
+  getData() async {
+    // fonction pour recuperer les donnees
+    Timer(const Duration(seconds: 3), () {
       setState(() {
-    _enabled = ! _enabled;
+        _enabled = !_enabled;
       });
     });
-}
-
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,111 +62,89 @@ getData() async {
                 child: const Center(
                     child: CircularProgressIndicator(
                   // semanticsLabel: "Loading...",
-                  semanticsValue:"Loading...",
+                  semanticsValue: "Loading...",
                   color: Colors.blue,
                 ))),
           )
-        :Scaffold(
-      backgroundColor: const Color.fromARGB(255, 247, 251, 255),
-      appBar: const MyAppBar(),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) =>
-            SingleChildScrollView(
-                controller: _scrollController,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: IntrinsicHeight(
-                    child: Column(
-                      children: [
-                        const BlackBanner(),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width * 0.85,
-                              top: MediaQuery.of(context).size.height * 0.06),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, AppRoutes.devenirconsult);
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.black,
-                                fixedSize: const Size(140, 50),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                                shadowColor:
-                                    const Color.fromARGB(255, 170, 166, 166)),
-                            child: const Text(
-                              "Devenir Consultant",
-                              style: TextStyle(
-                                  fontFamily: 'popping',
-                                  fontSize: 11,
-                                  color: Color.fromRGBO(252, 185, 0, 1)),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(
-                                maxWidth:
-                                    MediaQuery.of(context).size.width * 0.65),
-                            child: Column(
-                              children: [
-                                const CustomSearchBar(),
-                                Expanded(
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+        : Scaffold(
+            backgroundColor: const Color.fromARGB(255, 247, 251, 255),
+            appBar: const MyAppBar(),
+            body: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) =>
+                  SingleChildScrollView(
+                      controller: _scrollController,
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints(minHeight: constraints.maxHeight),
+                        child: IntrinsicHeight(
+                          child: Column(
+                            children: [
+                              const BlackBanner(),
+                              Expanded(
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                      maxWidth:
+                                          MediaQuery.of(context).size.width *
+                                              0.65),
+                                  child: Column(
                                     children: [
-                                      AsideView(
-                                        offset: _offset,
-                                        values: const [
-                                          "Toutes les categories",
-                                          "Administration publique / Public administration",
-                                          "Administration publique / Public administration",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Conception logiciel / Software design",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Developpement local / Local development",
-                                          "Conception logiciel / Software design",
-                                        ],
+                                      const CustomSearchBar(),
+                                      Expanded(
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            AsideView(
+                                              offset: _offset,
+                                              values: const [
+                                                "Toutes les categories",
+                                                "Administration publique / Public administration",
+                                                "Administration publique / Public administration",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Conception logiciel / Software design",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Developpement local / Local development",
+                                                "Conception logiciel / Software design",
+                                              ],
+                                            ),
+                                            const Expanded(
+                                                child: ResultsView()),
+                                          ],
+                                        ),
                                       ),
-                                      const Expanded(child: ResultsView()),
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              const SizedBox(
+                                height: 40,
+                              ),
+                              const Footer1()
+                            ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        const Footer1()
-                      ],
-                    ),
-                  ),
-                )),
-      ),
-    );
+                      )),
+            ),
+          );
   }
 }
 
@@ -283,12 +261,36 @@ class _ResultsViewState extends State<ResultsView> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          "Résultats de la recherche",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              "Résultats de la recherche",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(
+                    context, AppRoutes.devenirconsult);
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                  shadowColor: const Color.fromARGB(255, 170, 166, 166)),
+              child: const Text(
+                "Devenir Consultant",
+                style: TextStyle(
+                    fontFamily: 'popping',
+                    fontSize: 11,
+                    color: Color.fromRGBO(252, 185, 0, 1)),
+              ),
+            ),
+          ],
         ),
         Expanded(
           child: Align(
@@ -402,7 +404,7 @@ class _ResultCardState extends State<ResultCard> {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-          return DashboardScreen();
+          return const DashboardScreen();
         }));
       },
       child: MouseRegion(

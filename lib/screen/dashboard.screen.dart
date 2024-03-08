@@ -395,7 +395,7 @@ class ServiceSection extends StatelessWidget {
                       const Text(
                           "Overview. Software design is the process of envisioning and defining software solutions to one or more sets of problems. One of the main components of software design is the soft... "),
                       Image.asset(
-                        "images/service.png",
+                        "assets/images/service.png",
                         width: MediaQuery.of(context).size.width,
                         height: MediaQuery.of(context).size.height * 0.4,
                         fit: BoxFit.fitWidth,
