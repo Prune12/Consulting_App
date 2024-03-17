@@ -12,6 +12,8 @@ import 'package:consulting_app/screen/message.screen.dart';
 import 'package:consulting_app/screen/newHome.screen.dart';
 import 'package:consulting_app/screen/offre.screen.dart';
 import 'package:consulting_app/screen/offreTermine.screen.dart';
+import 'package:consulting_app/screen/payementForm.screen.dart';
+import 'package:consulting_app/screen/payementOrangeMtn.screen.dart';
 import 'package:consulting_app/screen/taf.screen.dart';
 import 'package:consulting_app/utils/Themes.dart';
 import 'package:flutter/material.dart';
@@ -60,6 +62,8 @@ class _MyAppState extends State<MyApp> {
         AppRoutes.sendmessage:(context) => const MessagePage(),
         AppRoutes.forfait:(context) => const ForfaitPage(),
         AppRoutes.listmessage:(context) => const ListMessagePage(),
+        AppRoutes.payement:(context) => const PayementFormPage(),
+        AppRoutes.payementMtnOrange:(context) => const PayementOrangeMtnFormPage(), 
       },
       home:  Newhomepage(),
     );

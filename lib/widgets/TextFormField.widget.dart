@@ -171,7 +171,7 @@ class TextFormFieldPers2 extends StatelessWidget {
                         )
                       : null,
                   border: OutlineInputBorder(
-                    borderRadius: radiusforfield!,
+                    borderRadius: radiusforfield??BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.grey),
                   ),
                   counterText: "",

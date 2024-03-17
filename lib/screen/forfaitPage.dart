@@ -112,7 +112,7 @@ void initState() {
                            InkWell(
                         onTap: () {
                           Navigator.pushReplacementNamed(
-                                context, AppRoutes.createposte);
+                                context, AppRoutes.payement);
                         },
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.8,
@@ -156,7 +156,7 @@ void initState() {
                        InkWell(
                         onTap: () {
                           Navigator.pushReplacementNamed(
-                                context, AppRoutes.createposte);
+                                context, AppRoutes.payement);
                           
                         },
                         child: Container(
@@ -201,7 +201,7 @@ void initState() {
                       InkWell(
                               onTap: () {
                                 Navigator.pushReplacementNamed(
-                                context, AppRoutes.createposte);
+                                context, AppRoutes.payement);
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.8,

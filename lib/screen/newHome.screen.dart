@@ -7,8 +7,6 @@ import 'package:consulting_app/utils/Themes.dart';
 import 'package:consulting_app/widgets/appbar2.widget.dart';
 import 'package:consulting_app/widgets/commentaireContainer.widget.dart';
 import 'package:consulting_app/widgets/consultingContainer.widget.dart';
-import 'package:consulting_app/widgets/custom_Appbar.widget.dart';
-import 'package:consulting_app/widgets/drawer_menu.widget.dart';
 import 'package:consulting_app/widgets/imageAndtextAndmoneyContainer.widget.dart';
 import 'package:consulting_app/widgets/offre.widget.dart';
 import 'package:consulting_app/widgets/searchbar.widget.dart';
@@ -375,6 +373,7 @@ int currentIndex = 0;
                     Wrap(
                         alignment: WrapAlignment.center,
                         spacing: 8,
+                        runSpacing : 10,
                         direction: Axis.horizontal,
                         children: [
                           //const SizedBox(width: 100),
@@ -514,7 +513,7 @@ int currentIndex = 0;
                           List<ZoomOnHover> mesWidgets = [
                             ZoomOnHover(
                               child: TextAndContainerButton(
-                                width: width,
+                                width: 250,
                                 height: 60,
                                 image: 'assets/images/personnal.png',
                                 text1: const Text(
@@ -526,7 +525,7 @@ int currentIndex = 0;
                             ),
                             ZoomOnHover(
                               child: TextAndContainerButton(
-                                width: width,
+                                width: 250,
                                 height: 63,
                                 image: 'assets/images/money.png',
                                 text1: const Text(
@@ -538,7 +537,7 @@ int currentIndex = 0;
                             ),
                             ZoomOnHover(
                               child: TextAndContainerButton(
-                                width: width,
+                                width: 250,
                                 height: 65,
                                 image: 'assets/images/ballon.png',
                                 text1: const Text(
@@ -593,7 +592,7 @@ int currentIndex = 0;
                             ),
                             ZoomOnHover(
                               child: TextAndContainerButton(
-                                width: width,
+                                width: 250,
                                 height: 60,
                                 image: 'assets/images/etoile.png',
                                 text1: const Text('Evenementiels',

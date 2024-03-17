@@ -18,6 +18,8 @@ class AppRoutes{
   static const String sendmessage='/lib/screen/message.screen.dart';
   static const String forfait= '/lib/screen/forfaitPage.dart';
   static const String listmessage='/lib/screen/listMessage.screen.dart';
+  static const String payement='/lib/screen/payementForm.screen.dart';
+  static const String payementMtnOrange='/lib/screen/payementOrangeMtn.screen.dart';
 
 
 }
